@@ -127,6 +127,14 @@ typedef struct
 	 */
 	double (* getCell)(Matrix const * this, size_t ordinate, size_t abscissa);
 
+	/**
+	 * Let A, a n*n square matrix, Tr(A) = ∑_i=1->n Ai,j
+	 *
+	 * @param this - the matrix to get trace for
+	 *
+	 * @return - the sum of the main diagonal, or NO_VALUE if [this] is NULL,
+	 * 		or MATRIX_IS_NOT_SQUARE if [this] is not square
+	 */
 	double (* trace)(Matrix const * this);
 
 	/**
