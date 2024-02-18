@@ -1,12 +1,10 @@
 
 #include "../../src/Matrix.h"
 
-#include <stdio.h>
-
 #include <criterion/criterion.h>
 
 
-// TODO: add doc for failed allocations
+
 
 Test(Matrix, create_requires_positive_width)
 {
