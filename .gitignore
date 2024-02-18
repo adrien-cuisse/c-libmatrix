@@ -1,0 +1,8 @@
+
+# IDE junk
+.idea/
+
+# Compiled
+*/**/*.o
+test/bin/*
+
