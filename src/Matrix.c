@@ -266,6 +266,9 @@ static double trace(Matrix const * const this)
 	size_t coord;
 	double trace;
 
+	if (this == NULL)
+		return NO_VALUE;
+
 	if (this->height != this->width)
 		return MATRIX_IS_NOT_SQUARE;
 
@@ -290,6 +293,9 @@ static double determinant(Matrix const * const this)
 		return this->cells[0][0];
 	if (this->height == 2)
 		return this->cells[0][0] * this->cells[1][1] - this->cells[0][1] * this->cells[1][0];
+
+	/* TODO: we don't need the FULL cofactors matrix, only 1 row or column */
+	/* TODO: rows permutation for faster processing, instead of Laplace expansion */
 
 	cofactorsMatrix = _Matrix->cofactors(this);
 	if (cofactorsMatrix == NULL)
